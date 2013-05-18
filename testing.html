@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+	<title>Easy JavaScript Testing </title>
+	<style>
+		.pass:before {
+			content: 'PASS: ';
+			color:  blue;
+			font-weight: bold;
+		}
+		
+		.fail:before {
+			content: 'FAIL: ';
+			color: red;
+			font-weight: bold;
+			
+		}
+	</style>
+</head>
+<body>
+
+<ul id="output"></ul>
+	
+<script>
+var output = document.getElementById('output');
+
+function assert( outcome, description ) {
+	var li = document.createElement('li');
+	li.className = outcome ? 'pass' : 'fail';
+	li.appendChild( document.createTextNode( description ) ) ;
+	
+	output.appendChild(li);
+};
+</script>
+
+<script>
+var someArray = [1,2,3,4,5],
+	len = someArray.length,
+	i = 0;
+	
+var count = 0;
+//colocammos en este apartado
+/*
+for ( ; i < len; i++ ) (function(i) {
+	setTimeout(function() {
+		//assert( count++ === i, 'Checking the value of: ' + i );
+	}, i * 300);
+})(i);*/
+</script>
+
+</body>
+</html>
